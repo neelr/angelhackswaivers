@@ -152,7 +152,13 @@ async function createDocument(content, callback) {
 
   const pdf = await page.pdf({
     format: "letter",
-    landscape: false
+    landscape: false,
+    margin: {
+      top: "96px",
+      bottom: "96px",
+      left: "48px",
+      right: "48px"
+    }
   })
 
 
