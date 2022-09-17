@@ -48,27 +48,23 @@
 </style>
 </head>
 <body>
-  <h1>Agreement</h1>
+  <h1>Event Liability Release</h1>
 
-  <p>This document was signed by <span class="info"><%= name %></span> on behalf of <span class="info"><%= company %></span>.</p>
+  <p> 
+    By signing this event liability release (“Release”), I hereby agree and acknowledge that I have made the voluntary and informed decision to participate in the event entitled Hack Austin to be conducted on October 16, 2022 at dadaLab (“Event”) and organized and hosted by a group of students (the “Team”), a fiscal sponsee of The Hack Foundation, a California nonprofit corporation serving as a fiscal sponsor for events hosted by students, such as the Team (the “Nonprofit”). The Team and the Nonprofit shall be collectively referred to as “Hack Club” for purposes of this Release.
+  </p>
 
+  <p>In consideration for my ability to participate in the Event, I agree to the contractual representations and agreements made herein. Further, I understand and agree that I am not required to participate in the Event, and that my agreement to do so and to execute this Release has been made in my sole and unfettered discretion and not under duress or any undue influence from any individual, entity or organization.</p>
+  <p><b>I am aware that the activities associated with the Event, including but not limited to the travel to and from the Event, may be hazardous to my health or well-being and that I could be seriously injured or killed; however, I acknowledge that by signing this release, I, for myself and for my heirs, next of kin, executors, administrators, legal representatives, assignees and successors in interest, am assuming the risks associated with participation in the Event and that I am releasing Hack Club, and each of its officers, employees, attorneys, agents and volunteers from any and all liability for damage to or loss of my personal property, sickness or injury from any source, or death which might occur while participating in the Event. Further, I acknowledge, understand and agree that this release is a valid and binding contract and that I have read it carefully and understand and agree to be bound by the contents hereof.</b></p>
+  
+  <p>In addition to the foregoing, by signing below, I hereby expressly warrant and represent that I have been made aware of, agree to and acknowledge each of the following for myself, my heirs, next of kin, executors, administrators, legal representatives, assignees and successors in interest:</p>
+  
   <div class="signature-block">
-    <p class="signature-field"><img src="<%= signature %>" height="55"></p>
+    <p class="signature-field"><img src="<%= initials %>" height="55"> (initial) I am over 18 years of age; my date of birth is  <%=  dob %></p>
     <p>Name: <%= name %><br>Role: <%= role %><br>Date: <%= date %></p>
   </div>
 
-  <table class="form" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-      <td><label>Company name:</label><p><%= company %></p></td>
-      <td><label>Country:</label><p><%= country %></p></td>
-    </tr>
-    <tr>
-      <td><label>Name:</label><p><%= name %></p></td>
-      <td><label>Role:</label><p><%= role %></p></td>
-    </tr>
-    <tr>
-      <td colspan="2"><label>Signature:</label><p><img src="<%= signature %>" height="55"></p></td>
-    </tr>
-  </table>
+
+
 </body>
 </html>

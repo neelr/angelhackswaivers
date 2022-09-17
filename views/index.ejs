@@ -323,6 +323,24 @@
 
       <div class="form-row">
         <div class="form-label">
+          <label for="dob">What’s your date of birth?</label>
+        </div>
+        <div class="form-field">
+          <input type="date"
+                 id="dob"
+                 name="dob"
+                 class="c-input"
+                 size="40"
+                 maxlength="100"
+                 placeholder="<%= exampleData.dob %>"
+                 oninvalid="this.setCustomValidity('Please enter your date of birth.')"
+                 oninput="setCustomValidity('')"
+                 required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">
           <label for="email">What’s your email address?</label>
         </div>
         <div class="form-field">
@@ -336,7 +354,18 @@
                  oninput="setCustomValidity('')"
                  required>
         </div>
-        <p class="form-comment">PactMaker sends out a copy of the agreement, so be sure to use a real email address.</p>
+        <p class="form-comment">WaiverKit sends out a copy of the agreement, so be sure to use a real email address.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">
+          <label>Sign your <b>initials</b></label>
+        </div>
+        <div class="form-field">
+          <button class="js-sig-reset sig-reset hidden" for="initials"></button>
+          <canvas class="js-sig-canvas sig" for="initials" width="444" height="125"></canvas>
+          <input type="hidden" class="js-sig" name="initials">
+        </div>
       </div>
 
       <div class="form-row">
@@ -344,8 +373,8 @@
           <label>Sign your name</label>
         </div>
         <div class="form-field">
-          <button class="js-sig-reset sig-reset hidden"></button>
-          <canvas class="js-sig-canvas sig" width="444" height="125"></canvas>
+          <button class="js-sig-reset sig-reset hidden" for="signature"></button>
+          <canvas class="js-sig-canvas sig" for="signature" width="444" height="125"></canvas>
           <input type="hidden" class="js-sig" name="signature">
         </div>
       </div>
