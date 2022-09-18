@@ -101,7 +101,7 @@ function sendEmails(data) {
   // Send email to customer
   client.sendEmail({
     'From': process.env.POSTMARK_FROM_ADDRESS,
-    'To': data.email,
+    'To': `${data.email}, ${data.parentEmail}`,
     'Subject': signeeSubject(data),
     'HtmlBody': emailContentSignee(data),
     'Attachments': [attachment]
@@ -114,6 +114,7 @@ function sendEmails(data) {
     console.log('Email sent:')
     console.log(results)
   })
+
 
   // Send email notification to internal team
   if (process.env.INTERNAL_EMAIL_RECIPIENTS) {
