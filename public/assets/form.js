@@ -1,4 +1,5 @@
 var submit = document.querySelector('.js-submit');
+submit.disabled = true
 
 // Create Signature Canvas
 var signatureCanvases = document.querySelectorAll('.js-sig-canvas');
@@ -7,25 +8,23 @@ let statusArray = [];
 for(let i = 0; i < signatureCanvases.length; i++) {
   const signatureCanvas = signatureCanvases[i];
 
+  statusArray.push(true)
+
   let signaturePad = new SignaturePad(signatureCanvas, {
     minWidth: 1,
     maxWidth: 1,
     onBegin: function() {
       document.querySelector('.js-sig-reset[for=' + signatureCanvas.getAttribute("for")  + ']').classList.remove('hidden');
-      if(!statusArray[i]) {
-        statusArray.push(false)
-      } else {
-        statusArray[i] = false;
-      }
-      
-
-      if(statusArray.every((val) => val == false ) && statusArray.length == signatureCanvases.length) {
-
-        submit.disabled = false;
-      }
+      statusArray[i] = false;
+      console.log(signatureCanvases)
+      console.log(statusArray)
+      console.log(signatureCanvas)
     },
     onEnd: function() {
-      document.querySelector('.js-sig').value = signaturePad.toDataURL();
+      document.querySelector('.js-sig[name=' + signatureCanvas.getAttribute("for") + ']').value = signaturePad.toDataURL();
+      if(statusArray.every((val) => val == false ) && statusArray.length == signatureCanvases.length) {
+        submit.disabled = false;
+      }
     }
   });
 
@@ -35,12 +34,15 @@ for(let i = 0; i < signatureCanvases.length; i++) {
     signaturePad.clear();
     this.classList.add('hidden');
     statusArray[i] = true;
+    submit.disabled = true
 
-    console.log(statusArray)
-
-    if(statusArray.some((el) => { return el == true })) {
-      submit.disabled = true;
+    if(statusArray.every((val) => val == false ) && statusArray.length == signatureCanvases.length) {
+      submit.disabled = false;
     }
+
+    console.log(signatureCanvases)
+    console.log(statusArray)
+    console.log(signatureCanvas)
   })
 
 }

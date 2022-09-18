@@ -90,8 +90,9 @@
       <p><b><%= address %></b></p>
       <p>(City, State, ZIP)</p>
       <p><b><%= city %>, <%= state %> <%= zip %></b></p>
-      <p>(Email Address)</p>
-      <p><b><%= email %></b></p>
+      <br>
+      <p>(Phone Number & Email Address)</p>
+      <p><b><%= phone %> <%= email %></b></p>
       
     </div>
   </div>
@@ -102,7 +103,7 @@
 
   <div style="display: flex; gap: 10rem;">
     <div>
-      <p>Parent or Guardian (Print Name)</p>
+      <p style="width:max-content">Parent or Guardian (Print Name)</p>
       <p><b><%= parentName %></b></p>
       <br>
       <p>(Signature)</p>
@@ -112,8 +113,8 @@
       <p>(Date)</p>
       <p><b><%= date %></b></p>
       <br>
-      <p>(Email Address)</p>
-      <p><b><%= parentEmail %></b></p>
+      <p>(Phone Number & Email Address)</p>
+      <p><b><%= parentPhone %> <%= parentEmail %></b></p>
       
     </div>
   </div>

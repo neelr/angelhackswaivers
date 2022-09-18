@@ -71,6 +71,15 @@ app.get('/example.pdf', async (req, res) => {
 
 })
 
+app.get('/example.html', async (req, res) => {
+  const template = ejs.compile(agreement)
+  const data = viewData.exampleData
+  data.date = moment().format('MMMM Do, YYYY')
+
+  res.end(template(data))
+
+})
+
 
 /**
  * Start express server
@@ -85,7 +94,7 @@ app.listen(process.env.PORT || 3000, () => console.log('PactMaker is up and runn
 function sendEmails(data) {
   const attachment = {
     'Content': data.agreement,
-    'Name': `${data.company}_${data.date}.pdf`,
+    'Name': `Hack Austin Liability Waiver_${data.date}.pdf`,
     'ContentType': 'application/pdf'
   }
 
