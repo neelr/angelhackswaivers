@@ -154,8 +154,8 @@ async function createDocument(content, callback) {
     format: "letter",
     landscape: false,
     margin: {
-      top: "96px",
-      bottom: "96px",
+      top: "48px",
+      bottom: "48px",
       left: "48px",
       right: "48px"
     }
