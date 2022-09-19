@@ -11,22 +11,22 @@ for(let i = 0; i < signatureCanvases.length; i++) {
   statusArray.push(true)
 
   let signaturePad = new SignaturePad(signatureCanvas, {
-    minWidth: 1,
-    maxWidth: 2,
-    onBegin: function() {
+    maxWidth: 2.25
+  });
+  
+  signaturePad.addEventListener('beginStroke', function() {
       document.querySelector('.js-sig-reset[for=' + signatureCanvas.getAttribute("for")  + ']').classList.remove('hidden');
       statusArray[i] = false;
       console.log(signatureCanvases)
       console.log(statusArray)
       console.log(signatureCanvas)
-    },
-    onEnd: function() {
+  })
+  signaturePad.addEventListener('endStroke', function() {
       document.querySelector('.js-sig[name=' + signatureCanvas.getAttribute("for") + ']').value = signaturePad.toDataURL();
       if(statusArray.every((val) => val == false ) && statusArray.length == signatureCanvases.length) {
         submit.disabled = false;
       }
-    }
-  });
+  })
 
   // Reset Signature button
   document.querySelector('.js-sig-reset[for=' + signatureCanvas.getAttribute("for") + ']').addEventListener('click', function(event) {
