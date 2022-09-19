@@ -12,7 +12,7 @@ for(let i = 0; i < signatureCanvases.length; i++) {
 
   let signaturePad = new SignaturePad(signatureCanvas, {
     minWidth: 1,
-    maxWidth: 1,
+    maxWidth: 2,
     onBegin: function() {
       document.querySelector('.js-sig-reset[for=' + signatureCanvas.getAttribute("for")  + ']').classList.remove('hidden');
       statusArray[i] = false;
