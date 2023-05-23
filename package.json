@@ -6,7 +6,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "npx playwright install && node index.js"
   },
   "dependencies": {
     "axios": "^1.1.3",
