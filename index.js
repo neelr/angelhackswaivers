@@ -123,7 +123,7 @@ app.listen(process.env.PORT || 3000, () => console.log('PactMaker is up and runn
 function sendEmails(data) {
   const attachment = {
     'Content': data.agreement,
-    'Name': `Hack Austin Liability Waiver_${data.date}.pdf`,
+    'Name': `AngelHacks Liability Waiver_${data.date}.pdf`,
     'ContentType': 'application/pdf'
   }
 
