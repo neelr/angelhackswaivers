@@ -1,3 +1,4 @@
+console.log("HI")
 require('dotenv').config()
 const express = require('express')
 const app = express()
