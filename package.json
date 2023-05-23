@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
-    "node": "8.8.1"
+    "node": "18.x"
   },
   "scripts": {
     "start": "node index.js"
